@@ -6,9 +6,7 @@ import VideoCard from "../components/VideoCard";
 
 
 const Feed = () => {
-
   const { videos } = useContext(YoutubeContext);
-
 
   return (
     <div className="flex">

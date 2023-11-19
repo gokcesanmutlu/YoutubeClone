@@ -29,11 +29,14 @@ const VideoCard = ({ video, type }) => {
                     <div>
 
                         <h4 className="font-bold">
-                            {type && video.title.length > 35
-                                ? `${video.title.slice(0, 35)}...`
-                                : (video.title.length > 50
-                                    ? `${video.title.slice(0, 50)}...`
-                                    : video.title)
+                            {
+                                type === "deneme"
+                                    ? video.title.slice(0, 150)
+                                    : type && video.title.length > 34
+                                        ? `${video.title.slice(0, 34)}...`
+                                        : video.title.length > 50
+                                            ? `${video.title.slice(0, 50)}...`
+                                            : video.title
                             }
                         </h4>
                         <p>{video.channelTitle}</p>

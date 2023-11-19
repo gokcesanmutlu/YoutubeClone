@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 const options = {
     // istek ile göndermemiz gereken kimliğimiz
     params: {
@@ -28,3 +29,5 @@ export const getData = async (path) => {
     } catch (err) { console.log("verileri çekerken hata oluştu ") }
 
 }
+
+
