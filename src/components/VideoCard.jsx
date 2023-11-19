@@ -2,20 +2,20 @@ import millify from "millify"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const VideoCard = ({ video,type }) => {
+const VideoCard = ({ video, type }) => {
     const [isHover, setIsHover] = useState(false)
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     // console.log(video);
     // console.log(video.thumbnail[video.thumbnail.length - 1]) //bu bize obj getiriyo.içindeki url image'i
     return (
         <div
-        onClick={()=> navigate (`/watch/${video.videoId}`)}
+            onClick={() => navigate(`/watch/${video.videoId}`)}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
             className={`cursor-pointer ${type && "row"}`}>
-            <div>   
+            <div>
                 <img
-                     className="rounded-lg w-full h-full object-contain"
+                    className="rounded-lg w-full h-full object-contain"
                     src={isHover && video.richThumbnail
                         ? video.richThumbnail[0].url
                         : video.thumbnail[video.thumbnail.length - 1].url} />
@@ -27,7 +27,15 @@ const VideoCard = ({ video,type }) => {
                         src={video.channelThumbnail[0].url} />
 
                     <div>
-                        <h4 className="font-bold truncate">{video.title}</h4>
+
+                        <h4 className="font-bold">
+                            {type && video.title.length > 35
+                                ? `${video.title.slice(0, 35)}...`
+                                : (video.title.length > 50
+                                    ? `${video.title.slice(0, 50)}...`
+                                    : video.title)
+                            }
+                        </h4>
                         <p>{video.channelTitle}</p>
                         <div className="flex gap-2">
                             <p>{millify(video.viewCount)} İzlenme</p>

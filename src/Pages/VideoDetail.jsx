@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../helpers/getData";
 import Loading from "../components/Loading";
 import VideoCard from "../components/VideoCard";
+import Comments from "../components/Comments";
 
 const VideoDetail = () => {
   //null bize loadingin basılmasında gerekli boş dize yaparsak elemanı yoksa şeklinde ayrıca belirtmek gerek
@@ -29,6 +30,7 @@ const VideoDetail = () => {
           url={`https://www.youtube.com/watch?v=${id}`}
         />
         <VideoInfo />
+        <Comments/>
       </div>
 
       <div className="max-md:w-full lg:max-w-[400px]  flex flex-col max-lg:my-5 px-3 gap-5">
