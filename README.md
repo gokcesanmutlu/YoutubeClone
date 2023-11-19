@@ -3,9 +3,9 @@
 - react-router-dom
 - react-icons
 - axios
-- react-player (Video oynatma)
+- react-player 
 - millify (sayı formatlamak)
-- moment (api bize hangi tarihte videonun yüklendiğini verir. ama yedi saat önce falan yazar. Bu, bu kütüphaneyle oluyor)(bu projede gerek kalmadı, api'de 4 gün önce vs yazıyo zaten)
+- moment (api bize hangi tarihte videonun yüklendiğini verir. ama yedi saat önce falan yazar. Bu, bu kütüphaneyle oluyor)
 - Tailwind
   kullanımı : get started - frameworkguides - vite
 
