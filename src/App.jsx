@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Feed />} />
-        {/* dinamik route tanımlama ":" */}
+        {/*dynamic route ":" */}
         <Route path="/watch/:id" element={<VideoDetail />} />
         <Route path="/results" element={<SearchResult />} />
       </Routes>

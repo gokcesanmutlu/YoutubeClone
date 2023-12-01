@@ -11,15 +11,17 @@ export function YoutubeProvider({ children }) {
     //   console.log(selectedCategory)
 
     useEffect(() => {
-        //apiden videolar alınır.
+        // getting videos from API
         if (selectedCategory.type === "home" ||
             selectedCategory.type === "trending") {
-            // yardımcı fonksiyonu kullanarak apiye istek atma
+            // Sending request via using helpers fonk.
             getData(`/${selectedCategory.type}`).then((res) => setVideos(res.data.data))
         }
-        // eğer seçili kategori home ve trending dışında ise search'e istek atıp param versin
+        // if selected category is not category/home/trending.
+        // A request is made to Search and a parameter is given.
 
-// Aşağıdaki kodu yazınca search inputuna örn music param'ını yazınca gelen verileri çeker
+        // When you type the following code into the search input,
+        // For example, when you type the music parameter, it pulls the incoming data.
         if (selectedCategory.type === "category") {
             getData(`search?query=${selectedCategory.name}&type=video`)
                 .then((res) => setVideos(res.data.data))
@@ -28,7 +30,7 @@ export function YoutubeProvider({ children }) {
     }, [selectedCategory])
 
     return (
-        // çift parantez olma sebebi, value tek değer kabul eder, bizde üç var. Bunları obje içine alırsak tek olur.
+        // The reason for the double parentheses is that value accepts a single value, we have three. If we put these into objects, they become one.
         <YoutubeContext.Provider value={{ selectedCategory, setSelectedCategory, videos }}>
             {children}
         </YoutubeContext.Provider>

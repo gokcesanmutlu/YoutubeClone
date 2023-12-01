@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background-color: #000;
   color: white;
@@ -17,7 +16,7 @@ body {
   justify-content: space-between;
   padding: 0 40px;
   gap: 30px;
-  /* video boyutu min 350 max 450 px olabilir kaç sütun sığıyorsa o kadar doldur */
+  /* video size can be min 350, max 450 px, fill in as many columns as you can */
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
 }
 
@@ -38,7 +37,7 @@ body {
   gap: 10px;
 }
 
-.commentgrid{
+.commentgrid {
   display: grid;
   grid-template-columns: 40px auto;
   gap: 10px;

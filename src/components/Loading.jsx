@@ -1,9 +1,10 @@
-//prop alırız switch yardımıyla her sayfaya ayrı loading yapmak yerine tüm loadingleri bu sayfada toplarız
+//We use props. 
+// Instead of loading each page separately, we collect all loadings on this page with the help of a switch.
 const Loading = ({ type }) => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   switch (type) {
-    // Feed için loading
+    // Loading For Feed
     case "video":
       return items.map((i) => (
         <div
@@ -46,7 +47,7 @@ const Loading = ({ type }) => {
         </div>
       ));
 
-    // VideoDetail sayfası için loading
+    // Loading for VideoDetail Page
     case "detail":
       return (
         <div role="status" className="my-5 animate-pulse">

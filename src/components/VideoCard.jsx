@@ -6,7 +6,7 @@ const VideoCard = ({ video, type }) => {
     const [isHover, setIsHover] = useState(false)
     const navigate = useNavigate();
     // console.log(video);
-    // console.log(video.thumbnail[video.thumbnail.length - 1]) //bu bize obj getiriyo.içindeki url image'i
+    // console.log(video.thumbnail[video.thumbnail.length - 1]) //this brings us obj. The url inside brings the image
     return (
         <div
             onClick={() => navigate(`/watch/${video.videoId}`)}

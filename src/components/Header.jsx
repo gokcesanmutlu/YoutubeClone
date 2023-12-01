@@ -3,8 +3,8 @@ import { AiFillBell, AiOutlineSearch, AiFillVideoCamera } from "react-icons/ai";
 
 const Header = () => {
     const navigate = useNavigate()
-    // Kullanıcıyı arama sonuçları sayfasına yönlendir
-    // Url'e arama parametresi olarak aratılan terimi ekle
+    // Redirect user to search results page
+    // Add the search term as a search parameter to the url
     const handleSubmit = (e) => {
         e.preventDefault()
         const text = e.target[0].value;
@@ -15,14 +15,11 @@ const Header = () => {
         <header className="flex justify-between items-center p-4">
             <Link className="flex items-center gap-[10px]">
                 <img width={50} src="/logo2.png" />
-                {/* sadece max-md:hidden yapsak da aynı sonucu alırdık */}
+                {/* We take same resultl = max-md:hidden */}
                 <h1 className="text-2xl hidden md:block">Youtube</h1>
             </Link>
 
-            {/* tailwindde boost'taki gibi form kontrol yazınca güzel bir input gelmesi gibi bir olay yok, 
-            tailwindi sadece etkili css yazma yöntemi gibi düşünebilirsiniz, hazır comp. yok
-            tw ve boost.'un bazı kodları aynı olduğundan birlikte kullanılması sağlıksız. Projelerde 
-            css/sass/boost./tw gibi stillendirme çözümlerinden birini tercih etmek en doğrusu*/}
+           
             <form onSubmit={handleSubmit} className="flex items-center border border-gray-400 rounded-[20px]">
                 <input placeholder="example: cat videos"
                     className="bg-black outline-none rounded-[20px] px-3 py-1 b" type="text" />

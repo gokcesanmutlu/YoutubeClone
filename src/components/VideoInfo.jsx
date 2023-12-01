@@ -6,7 +6,7 @@ import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import StringArea from "./StringArea";
 import { millify } from 'millify';
 import moment from "moment";
-// import "moment/locale/tr" bunu yapar ve /moment 'i yukarıya eklersek yazı türkçe olur from now yazısı
+//also you must import "moment/locale/tr" and if we add /moment above, the text(from now) will be in Turkish 
 
 
 const VideoInfo = () => {
@@ -15,9 +15,9 @@ const VideoInfo = () => {
     const [channel, setChannel] = useState(null)
 
     const getInfos = async () => {
-        //Kanalın ıd'si ve video bilgilerine erişme
+        //Accessing channel ID and video information
         const detailRes = await getData(`/video/info?id=${id}`)
-        //önceki istekteki kanal id'sini kullanarak kanalın detay bilgilerine
+        //Accessing the detailed information of the channel using the channel id in the previous request
         const channelRes = await getData(`/channel/about?id=${detailRes.data.channelId}`)
 
         setDetail(detailRes.data)
@@ -52,7 +52,7 @@ const VideoInfo = () => {
                 <div className="flex items-center rounded-full bg-gray-600">
                     <div className="flex items-center gap-3 py-2 px-4 border-right">
                         <AiFillLike />
-                        {/* yüzden sonra beştane sıfır olsun demek aşağıdaki kullanım 100e5 önce bunu kullandık aşağıda sonra sildik.*/}
+                        {/* It means there should be 5 zeros after the hundred= 100e5. we did use this then deleted*/}
                         <span>{Math.round(Math.random() * 100)}B</span>
                     </div>
                     <div className="py-2 px-4">
@@ -65,7 +65,7 @@ const VideoInfo = () => {
                 <div className="flex gap-3">
                     <p>{millify(detail.viewCount)} izlenme</p>
                     <p>{moment(detail.publishDate).fromNow()}</p>
-                    {/* buraya ileri bir tarih yazarsan örn 4 ay sonra gibi bir şeyi de fromnow hesaplar */}
+                    {/* if you write a future date here, fromnow will calculate something like 4 months later */}
                 </div>
                 <StringArea text={detail.description} max={300} />
             </div>

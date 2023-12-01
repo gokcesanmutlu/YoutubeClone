@@ -34,7 +34,7 @@ export const Comments = () => {
                                 <div className="rounded-full py-1 px-1 hover:bg-gray-700">
                                     <AiFillLike />
                                 </div>
-                                {/* yüzden sonra beştane sıfır olsun demek aşağıdaki kullanım 100e5 önce bunu kullandık aşağıda sonra sildik.*/}
+                              
                                 <span>{Math.round(Math.random() * 100)}</span>
                             </div>
                             <div className="py-1 px-1 rounded-full hover:bg-gray-700">

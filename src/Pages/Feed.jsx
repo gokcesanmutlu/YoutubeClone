@@ -11,7 +11,7 @@ const Feed = () => {
   return (
     <div className="flex">
       <SideBar />
-      {/* gridi tw yerine düz css ile yazmak daha kolay olduğundan sınıf verdik */}
+      {/* Since it is easier to write the grid with plain css instead of tw, we gave it a class.*/}
       <div className="videos">
         {
           !videos ? (<Loading type={"video"}/>) : (
